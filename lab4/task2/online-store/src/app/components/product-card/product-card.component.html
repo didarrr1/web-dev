@@ -1,0 +1,51 @@
+<div class="product-card">
+    <div class="gallery-container">
+      <div class="main-image-container">
+        <button class="gallery-nav prev" (click)="prevImage()" [disabled]="product.images.length <= 1">❮</button>
+        <img [src]="selectedImage" [alt]="product.name" class="main-image">
+        <button class="gallery-nav next" (click)="nextImage()" [disabled]="product.images.length <= 1">❯</button>
+      </div>
+      
+      <div class="thumbnail-container" *ngIf="product.images.length > 1">
+        <div class="thumbnail-list">
+          <img 
+            *ngFor="let image of product.images" 
+            [src]="image" 
+            [alt]="product.name"
+            (click)="changeImage(image)"
+            [class.active]="selectedImage === image"
+            class="thumbnail">
+        </div>
+      </div>
+    </div>
+  
+    <div class="product-info">
+      <h3 class="product-name">{{ product.name }}</h3>
+      <p class="product-description">{{ product.description }}</p>
+      
+      <div class="rating-container">
+        <div class="stars">
+          <span *ngFor="let star of getStars(product.rating)" class="star filled">★</span>
+          <span *ngIf="hasHalfStar(product.rating)" class="star half">½</span>
+          <span *ngFor="let empty of getStars(5 - Math.ceil(product.rating))" class="star empty">☆</span>
+        </div>
+        <span class="rating-value">{{ product.rating }}</span>
+      </div>
+      
+      <div class="price-container">
+        <span class="price">{{ product.price | number }} ₸</span>
+      </div>
+      
+      <div class="actions">
+        <a [href]="product.link" target="_blank" class="btn btn-primary">На Kaspi.kz</a>
+        <div class="share-buttons">
+          <button (click)="shareWhatsApp()" class="btn btn-whatsapp">
+            <span class="icon">📱</span> WhatsApp
+          </button>
+          <button (click)="shareTelegram()" class="btn btn-telegram">
+            <span class="icon">✈️</span> Telegram
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
