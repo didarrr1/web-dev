@@ -7,6 +7,230 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <style>
+    {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  body {
+  background: white;
+  color: #24292f;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+  text-align: center;
+  }
+
+  .hero {
+  margin-bottom: 24px;
+  }
+
+  h1.title {
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  }
+
+  .subtitle {
+  max-width: 860px;
+  margin: 0 auto 24px;
+  color: #57606a;
+  font-size: 16px;
+  line-height: 1.5;
+  }
+
+  .cta {
+  display: inline-block;
+  background: linear-gradient(rgb(61, 61, 61), black);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 44px;
+  }
+
+  .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  }
+
+  .card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(27, 31, 36, 0.5);
+  }
+
+  .price {
+  margin: 20px 0 10px;
+  font-family: "Mona Sans",serif;
+  }
+
+  .price-num {
+  font-size: 48px;
+  font-weight: 600;
+  }
+
+  .pum {
+  position: relative;
+  top: -0.5em;
+  }
+
+  .price sup {
+  color: rgb(130, 130, 130);
+  font-size: 20px;
+  position: relative;
+  top: -0.9em;
+  padding-right: 4px;
+  }
+
+  .price sub {
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+  top: -0.2em;
+  padding: 0 5px;
+  }
+
+  .button {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  }
+
+  .button a {
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  }
+
+  .black-button {
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: linear-gradient(rgb(61, 61, 61), black);
+  color: white;
+  margin-bottom: 44px;
+  }
+
+  .white-button {
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: white;
+  color: black;
+  border: 1px solid rgb(142, 142, 142);
+  margin-bottom: 44px;
+  }
+
+  .details-list {
+  text-align: left;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 14px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  }
+
+  summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  gap: 8px;
+  }
+
+  summary::before {
+  content: "›";
+  font-size: 18px;
+  }
+
+  details[open] summary::before {
+  transform: rotate(90deg);
+  }
+
+  .detail-body {
+  color: #57606a;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  }
+
+  .addons {
+  margin-top: 64px;
+  }
+
+  .addons h2 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  }
+
+  .addon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  }
+
+  .addon-card {
+  border: 1px solid #d0d7de;
+  border-radius: 7px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(27, 31, 36, 0.08);
+  transition: 0.3s ease;
+  }
+
+  .addon-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(27, 31, 36, 0.16);
+  }
+
+  .addon-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eef1f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  }
+
+  @media (max-width: 900px) {
+  .cards,
+  .addon-grid {
+  grid-template-columns: 1fr;
+  }
+
+  .button {
+  flex-direction: column;
+  }
+  }
+  .card--recommended {
+  border: 2px solid #1f6feb;
+  border-radius: 12px;
+  box-shadow: 0 0 0 4px rgba(31, 111, 235, 0.15);
+  }
+
+    .footer {
+      border-top: 1px solid lightgray;
+      padding: 20px;
+      color: gray;
+      font-size: 18px;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body>
@@ -149,5 +373,12 @@
     </div>
   </section>
 </main>
+
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#">Contacts</a>
+    <a href="#">main page</a>
+
+  </div>
 </body>
 </html>
