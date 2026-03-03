@@ -1,0 +1,38 @@
+<div class="create-container">
+  <h1>✨ Создать новый альбом</h1>
+  
+  <div class="error" *ngIf="error">
+    <p>❌ {{ error }}</p>
+  </div>
+
+  <div class="form-group">
+    <label for="userId">User ID (1-10):</label>
+    <input 
+      type="number" 
+      id="userId"
+      [(ngModel)]="albumData.userId" 
+      min="1" 
+      max="10"
+      placeholder="Введите User ID"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="title">Название альбома:</label>
+    <input 
+      type="text" 
+      id="title"
+      [(ngModel)]="albumData.title" 
+      placeholder="Введите название альбома"
+    >
+  </div>
+
+  <div class="actions">
+    <button class="cancel-btn" (click)="onCancel()" [disabled]="loading">
+      Отмена
+    </button>
+    <button class="create-btn" (click)="onSubmit()" [disabled]="loading">
+      {{ loading ? 'Создание...' : 'Создать' }}
+    </button>
+  </div>
+</div>

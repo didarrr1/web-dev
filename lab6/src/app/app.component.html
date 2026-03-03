@@ -1,0 +1,15 @@
+<div class="app-container">
+  <nav class="navbar">
+    <div class="nav-brand">Album Browser</div>
+    <div class="nav-links">
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/albums" routerLinkActive="active">Albums</a>
+      <a routerLink="/albums/new" routerLinkActive="active" class="new-album-link">➕ New Album</a>
+    </div>
+  </nav>
+  
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
